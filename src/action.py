@@ -31,3 +31,9 @@ print("Env GITHUB_OUTPUT: {}\nINPUT_WHO-TO-GREET: {}".format(github_output_env, 
 
 # Return the outputs
 set_output("time", datetime.now().strftime("%A, %B %d, %Y %I:%M:%S %p"))
+
+
+
+file_path = os.getenv("GITHUB_OUTPUT")
+with open(file_path, "a", encoding="utf8", newline="") as f:
+    print(f.read())
