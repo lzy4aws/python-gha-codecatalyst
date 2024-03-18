@@ -9,7 +9,7 @@ else:
     print("core available")
 
 # Receive the inputs
-who_to_greet = core.get_input('who-to-greet', required=True, trim_whitespace=True)
+who_to_greet = core.get_input('who-to-greet', required=True)
 print("Hello {}!".format(who_to_greet))
 
 
