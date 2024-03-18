@@ -7,5 +7,5 @@ runs:
       shell: bash
     - run: if [[ -f ./src/requirements.txt ]]; then pip install -r ./src/requirements.txt >> /dev/null; fi
       shell: bash 
-    - run: python ./src/action.py
+    - run: python ${{github.action_path}}/src/action.py
       shell: bash
