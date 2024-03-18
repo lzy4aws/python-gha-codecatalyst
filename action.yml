@@ -1,0 +1,11 @@
+name: 'Hello World (Python Version)'
+description: 'Greet the Earth. This is an example of an action using Python.'
+runs:
+  using: "composite"
+  steps:
+    - run: if [[ -f ./requirements.txt ]]; then pip install -r ./requirements.txt >> /dev/null; fi
+      shell: bash
+    - run: if [[ -f ./src/requirements.txt ]]; then pip install -r ./src/requirements.txt >> /dev/null; fi
+      shell: bash 
+    - run: python ./src/action.py
+      shell: bash
