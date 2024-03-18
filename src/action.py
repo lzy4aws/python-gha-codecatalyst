@@ -29,8 +29,9 @@ github_input_env = os.environ.get('INPUT_WHO-TO-GREET', "NOT-SET")
 print("Env GITHUB_OUTPUT: {}\nINPUT_WHO-TO-GREET: {}".format(github_output_env, github_input_env))
 
 # Return the outputs
-set_output("TIME", datetime.now().strftime("%A, %B %d, %Y %I:%M:%S %p"))
+# set_output("TIME", datetime.now().strftime("%A, %B %d, %Y %I:%M:%S %p"))
+set_output("TIME", "green")
 
 file_path = os.getenv("GITHUB_OUTPUT")
 with open(file_path, "r", encoding="utf8", newline="") as f:
-    print(f.read())
+    print(f.read(), end="")
