@@ -3,11 +3,9 @@ description: 'Greet the Earth. This is an example of an action using Python.'
 runs:
   using: "composite"
   steps:
-    - run: if [[ -f ./requirements.txt ]]; then pip install -r ./requirements.txt >> /dev/null; fi
+    - run: if [[ -f ${{github.action_path}}/requirements.txt ]]; then pip install -r ${{github.action_path}}/requirements.txt >> /dev/null; fi
       shell: bash
-    - run: if [[ -f ./src/requirements.txt ]]; then pip install -r ./src/requirements.txt >> /dev/null; fi
-      shell: bash
-    - run: echo 1
+    - run: if [[ -f ${{github.action_path}}/src/requirements.txt ]]; then pip install -r ${{github.action_path}}/src/requirements.txt >> /dev/null; fi
       shell: bash
     - run: python ${{github.action_path}}/src/action.py
       shell: bash
