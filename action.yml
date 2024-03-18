@@ -10,7 +10,7 @@ inputs:
 
 # Define your outputs here.
 outputs:
-  time:
+  TIME:
     description: The time we greeted you
 
 runs:

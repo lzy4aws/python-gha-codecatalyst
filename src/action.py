@@ -30,4 +30,4 @@ github_input_env = os.environ.get('INPUT_WHO-TO-GREET', "NOT-SET")
 print("Env GITHUB_OUTPUT: {}\nINPUT_WHO-TO-GREET: {}".format(github_output_env, github_input_env))
 
 # Return the outputs
-set_output('time', datetime.now().strftime("%A, %B %d, %Y %I:%M:%S %p"))
+set_output("time", datetime.now().strftime("%A, %B %d, %Y %I:%M:%S %p"))
