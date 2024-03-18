@@ -5,7 +5,9 @@ runs:
   steps:
     - run: if [[ -f ${{github.action_path}}/requirements.txt ]]; then pip install -r ${{github.action_path}}/requirements.txt >> /dev/null; fi
       shell: bash
-    - run: if [[ -f ${{github.action_path}}/src/requirements.txt ]]; then pip install -r ${{github.action_path}}/src/requirements.txt >> /dev/null; fi
+    - run: if [[ -f ${{github.action_path}}/src/requirements.txt ]]; then pip install -r ${{github.action_path}}/src/requirements.txt; fi
       shell: bash
+#    - run: if [[ -f ${{github.action_path}}/src/requirements.txt ]]; then pip install -r ${{github.action_path}}/src/requirements.txt >> /dev/null; fi
+#      shell: bash
     - run: python ${{github.action_path}}/src/action.py
       shell: bash
