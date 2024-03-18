@@ -16,8 +16,7 @@ def set_output(key: str, value: str):
         raise Exception(f"Unable to find output file GITHUB_OUTPUT")
     if not pathlib.Path(file_path).exists():
         raise Exception(f"Missing file at path: {file_path}")
-    with open(file_path, "a", encoding="utf8", newline="") as f:
-        f.write(f"{key.upper()}={value}{os.linesep}")
+    os.system(f"echo {key.upper()}={value} >> {file_path}")
 
 
 # Receive the inputs
@@ -30,9 +29,7 @@ github_input_env = os.environ.get('INPUT_WHO-TO-GREET', "NOT-SET")
 print("Env GITHUB_OUTPUT: {}\nINPUT_WHO-TO-GREET: {}".format(github_output_env, github_input_env))
 
 # Return the outputs
-set_output("time", datetime.now().strftime("%A, %B %d, %Y %I:%M:%S %p"))
-
-
+set_output("TIME", datetime.now().strftime("%A, %B %d, %Y %I:%M:%S %p"))
 
 file_path = os.getenv("GITHUB_OUTPUT")
 with open(file_path, "r", encoding="utf8", newline="") as f:
