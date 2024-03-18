@@ -6,6 +6,8 @@ runs:
     - run: if [[ -f ./requirements.txt ]]; then pip install -r ./requirements.txt >> /dev/null; fi
       shell: bash
     - run: if [[ -f ./src/requirements.txt ]]; then pip install -r ./src/requirements.txt >> /dev/null; fi
-      shell: bash 
+      shell: bash
+    - run: echo 1
+      shell: bash
     - run: python ${{github.action_path}}/src/action.py
       shell: bash
